@@ -28,6 +28,18 @@
       "@remix-testing/mynewvitelib3/server": [
         "libs/mynewvitelib3/src/server.ts"
       ],
+      "@remix-testing/shared/home/feat/admin": [
+        "libs/shared/home/feat/admin/src/index.ts"
+      ],
+      "@remix-testing/shared/home/feat/admin/server": [
+        "libs/shared/home/feat/admin/src/server.ts"
+      ],
+      "@remix-testing/shared/home/feat/customer": [
+        "libs/shared/home/feat/customer/src/index.ts"
+      ],
+      "@remix-testing/shared/home/feat/customer/server": [
+        "libs/shared/home/feat/customer/src/server.ts"
+      ],
       "@remix-testing/testingaffected": ["libs/testingaffected/src/index.ts"],
       "@remix-testing/testingaffected/server": [
         "libs/testingaffected/src/server.ts"
