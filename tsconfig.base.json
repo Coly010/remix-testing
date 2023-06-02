@@ -27,6 +27,10 @@
       "@remix-testing/mynewvitelib3": ["libs/mynewvitelib3/src/index.ts"],
       "@remix-testing/mynewvitelib3/server": [
         "libs/mynewvitelib3/src/server.ts"
+      ],
+      "@remix-testing/testingaffected": ["libs/testingaffected/src/index.ts"],
+      "@remix-testing/testingaffected/server": [
+        "libs/testingaffected/src/server.ts"
       ]
     }
   },
