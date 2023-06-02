@@ -1,0 +1,42 @@
+{
+  "name": "demoremixtest",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/demoremixtest",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "command": "remix build",
+      "options": {
+        "cwd": "apps/demoremixtest"
+      }
+    },
+    "serve": {
+      "command": "remix dev",
+      "options": {
+        "cwd": "apps/demoremixtest"
+      }
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "command": "remix-serve build",
+      "options": {
+        "cwd": "apps/demoremixtest"
+      }
+    },
+    "typecheck": {
+      "command": "tsc",
+      "options": {
+        "cwd": "apps/demoremixtest"
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/apps/demoremixtest"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/demoremixtest"
+      }
+    }
+  }
+}

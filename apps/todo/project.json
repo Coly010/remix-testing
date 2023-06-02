@@ -3,5 +3,31 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/todo",
   "projectType": "application",
-  "tags": []
+  "tags": [],
+  "targets": {
+    "build": {
+      "command": "remix build",
+      "options": {
+        "cwd": "apps/todo"
+      }
+    },
+    "serve": {
+      "command": "remix dev",
+      "options": {
+        "cwd": "apps/todo"
+      }
+    },
+    "start": {
+      "command": "remix-start build",
+      "options": {
+        "cwd": "apps/todo"
+      }
+    },
+    "typecheck": {
+      "command": "tsc",
+      "options": {
+        "cwd": "apps/todo"
+      }
+    }
+  }
 }

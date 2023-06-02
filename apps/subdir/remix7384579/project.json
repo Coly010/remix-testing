@@ -1,0 +1,34 @@
+{
+  "name": "subdir-remix7384579",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/subdir/remix7384579",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "command": "remix build",
+      "options": {
+        "cwd": "apps/subdir/remix7384579"
+      }
+    },
+    "serve": {
+      "command": "remix dev",
+      "options": {
+        "cwd": "apps/subdir/remix7384579"
+      }
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "command": "remix-serve build",
+      "options": {
+        "cwd": "apps/subdir/remix7384579"
+      }
+    },
+    "typecheck": {
+      "command": "tsc",
+      "options": {
+        "cwd": "apps/subdir/remix7384579"
+      }
+    }
+  }
+}

@@ -16,7 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "@remix-testing/mylib": ["libs/mylib/src/index.ts"],
-      "@remix-testing/mylib/server": ["libs/mylib/src/server.ts"]
+      "@remix-testing/mylib/server": ["libs/mylib/src/server.ts"],
+      "@remix-testing/mylibvite": ["libs/mylibvite/src/index.ts"],
+      "@remix-testing/mynewvitelib": ["libs/mynewvitelib/src/index.ts"],
+      "@remix-testing/mynewvitelib/server": ["libs/mynewvitelib/src/server.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
