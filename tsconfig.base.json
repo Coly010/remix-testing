@@ -19,7 +19,11 @@
       "@remix-testing/mylib/server": ["libs/mylib/src/server.ts"],
       "@remix-testing/mylibvite": ["libs/mylibvite/src/index.ts"],
       "@remix-testing/mynewvitelib": ["libs/mynewvitelib/src/index.ts"],
-      "@remix-testing/mynewvitelib/server": ["libs/mynewvitelib/src/server.ts"]
+      "@remix-testing/mynewvitelib/server": ["libs/mynewvitelib/src/server.ts"],
+      "@remix-testing/mynewvitelib2": ["libs/mynewvitelib2/src/index.ts"],
+      "@remix-testing/mynewvitelib2/server": [
+        "libs/mynewvitelib2/src/server.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
