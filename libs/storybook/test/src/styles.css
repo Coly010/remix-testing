@@ -1,0 +1,178 @@
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+/** task details terminal output theme */
+.terminal-output .ansi-black-fg {
+  color: #24292e;
+}
+.terminal-output .ansi-red-fg {
+  color: #d73a49;
+}
+.terminal-output .ansi-green-fg {
+  color: #28a745;
+}
+.terminal-output .ansi-yellow-fg {
+  color: #dbab09;
+}
+.terminal-output .ansi-blue-fg {
+  color: #0366d6;
+}
+.terminal-output .ansi-magenta-fg {
+  color: #5a32a3;
+}
+.terminal-output .ansi-cyan-fg {
+  color: #1b7c83;
+}
+.terminal-output .ansi-white-fg {
+  color: #6a737d;
+}
+.terminal-output .ansi-bright-black-fg {
+  color: #959da5;
+}
+.terminal-output .ansi-bright-red-fg {
+  color: #cb2431;
+}
+.terminal-output .ansi-bright-green-fg {
+  color: #22863a;
+}
+.terminal-output .ansi-bright-yellow-fg {
+  color: #b08800;
+}
+.terminal-output .ansi-bright-blue-fg {
+  color: #005cc5;
+}
+.terminal-output .ansi-bright-magenta-fg {
+  color: #5a32a3;
+}
+.terminal-output .ansi-bright-cyan-fg {
+  color: #3192aa;
+}
+.terminal-output .ansi-bright-white-fg {
+  color: #d1d5da;
+}
+
+.terminal-output .ansi-black-bg {
+  background-color: #3a3a3a;
+}
+.terminal-output .ansi-red-bg {
+  background-color: #dd948e;
+}
+.terminal-output .ansi-green-bg {
+  background-color: #b6d1aa;
+}
+.terminal-output .ansi-yellow-bg {
+  background-color: #f3d57c;
+}
+.terminal-output .ansi-blue-bg {
+  background-color: #8aa9d5;
+}
+.terminal-output .ansi-magenta-bg {
+  background-color: #cbafd5;
+}
+.terminal-output .ansi-cyan-bg {
+  background-color: #9ad1d4;
+}
+.terminal-output .ansi-white-bg {
+  background-color: #efefef;
+}
+.terminal-output .ansi-bright-black-bg {
+  background-color: #5e5d5e;
+}
+.terminal-output .ansi-bright-red-bg {
+  background-color: #e69b94;
+}
+.terminal-output .ansi-bright-green-bg {
+  background-color: #d1f0c3;
+}
+.terminal-output .ansi-bright-yellow-bg {
+  background-color: #f4d799;
+}
+.terminal-output .ansi-bright-blue-bg {
+  background-color: #a6cbfe;
+}
+.terminal-output .ansi-bright-magenta-bg {
+  background-color: #e7c7f2;
+}
+.terminal-output .ansi-bright-cyan-bg {
+  background-color: #b0f0f5;
+}
+.terminal-output .ansi-bright-white-bg {
+  background-color: #fff;
+}
+
+/**
+ * DTE connector animations
+ **/
+.dte-connector {
+  animation: 2s 1 both drawPath;
+}
+.for-new-task .dte-connector {
+  animation: 3s 1 both tracePath ease-in-out;
+}
+
+.dte-end-point {
+  animation: 0.5s both fadeIn;
+}
+.dte-end-point:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.for-new-task .dte-end-point {
+  animation: 3s both fadeInOut ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes drawPath {
+  from {
+    opacity: 0.5;
+    stroke-dasharray: 200%;
+    stroke-dashoffset: 200%;
+  }
+  to {
+    opacity: 1;
+    stroke-dasharray: 200%;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes tracePath {
+  0% {
+    opacity: 0.5;
+    stroke-dasharray: 200%;
+    stroke-dashoffset: 200%;
+  }
+  50% {
+    opacity: 1;
+    stroke-dasharray: 200%;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    opacity: 0;
+    stroke-dasharray: 200%;
+    stroke-dashoffset: -200%;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/**
+ * END - DTE connector animations
+ **/

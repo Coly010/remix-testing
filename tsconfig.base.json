@@ -28,6 +28,9 @@
       "@remix-testing/mynewvitelib3/server": [
         "libs/mynewvitelib3/src/server.ts"
       ],
+      "@remix-testing/nx-cloud/ui-primitives": [
+        "libs/nx-cloud/ui-primitives/src/index.ts"
+      ],
       "@remix-testing/shared/home/feat/admin": [
         "libs/shared/home/feat/admin/src/index.ts"
       ],
@@ -45,6 +48,16 @@
       ],
       "@remix-testing/shared/home/feat/external/server": [
         "libs/shared/home/feat/external/src/server.ts"
+      ],
+      "@remix-testing/storybook/new-test": [
+        "libs/storybook/new-test/src/index.ts"
+      ],
+      "@remix-testing/storybook/new-test/server": [
+        "libs/storybook/new-test/src/server.ts"
+      ],
+      "@remix-testing/storybook/test": ["libs/storybook/test/src/index.ts"],
+      "@remix-testing/storybook/test/server": [
+        "libs/storybook/test/src/server.ts"
       ],
       "@remix-testing/testingaffected": ["libs/testingaffected/src/index.ts"],
       "@remix-testing/testingaffected/server": [
