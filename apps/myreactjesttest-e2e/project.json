@@ -1,0 +1,33 @@
+{
+  "name": "myreactjesttest-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/myreactjesttest-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/myreactjesttest-e2e/cypress.config.ts",
+        "devServerTarget": "myreactjesttest:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "myreactjesttest:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "myreactjesttest:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/myreactjesttest-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["myreactjesttest"]
+}

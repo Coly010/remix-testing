@@ -1,0 +1,33 @@
+{
+  "name": "myreactjesttestit-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/myreactjesttestit-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/myreactjesttestit-e2e/cypress.config.ts",
+        "devServerTarget": "myreactjesttestit:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "myreactjesttestit:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "myreactjesttestit:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/myreactjesttestit-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["myreactjesttestit"]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "supermyreactjesttestitit-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/supermyreactjesttestitit-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/supermyreactjesttestitit-e2e/cypress.config.ts",
+        "devServerTarget": "supermyreactjesttestitit:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "supermyreactjesttestitit:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "supermyreactjesttestitit:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/supermyreactjesttestitit-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["supermyreactjesttestitit"]
+}

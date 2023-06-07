@@ -1,0 +1,48 @@
+{
+  "name": "myjesttest",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/myjesttest",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "command": "remix build",
+      "options": {
+        "cwd": "apps/myjesttest"
+      }
+    },
+    "serve": {
+      "command": "remix dev",
+      "options": {
+        "cwd": "apps/myjesttest"
+      }
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "command": "remix-serve build",
+      "options": {
+        "cwd": "apps/myjesttest"
+      }
+    },
+    "typecheck": {
+      "command": "tsc",
+      "options": {
+        "cwd": "apps/myjesttest"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/myjesttest/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "name": "myreactjesttestit",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/myreactjesttestit/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/myreactjesttestit",
+        "index": "apps/myreactjesttestit/src/index.html",
+        "baseHref": "/",
+        "main": "apps/myreactjesttestit/src/main.tsx",
+        "tsConfig": "apps/myreactjesttestit/tsconfig.app.json",
+        "assets": [
+          "apps/myreactjesttestit/src/favicon.ico",
+          "apps/myreactjesttestit/src/assets"
+        ],
+        "styles": ["apps/myreactjesttestit/src/styles.scss"],
+        "scripts": [],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/myreactjesttestit/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/myreactjesttestit/src/environments/environment.ts",
+              "with": "apps/myreactjesttestit/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "myreactjesttestit:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "myreactjesttestit:build:development"
+        },
+        "production": {
+          "buildTarget": "myreactjesttestit:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/myreactjesttestit/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "myreactjesttestit:build"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/myreactjesttestit/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
